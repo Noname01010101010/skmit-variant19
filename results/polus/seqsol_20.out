@@ -1,0 +1,53 @@
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630483: <seqsol_20> in cluster <MSUCluster> Done
+
+Job <seqsol_20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:11:41 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:11:41 2026
+Terminated at Fri Nov 27 00:11:41 2026
+Results reported at Fri Nov 27 00:11:41 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J seqsol_20
+#BSUB -q normal
+#BSUB -n 1
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/seqsol_20.out
+#BSUB -e results/seqsol_20.err
+#BSUB -R "span[ptile=1]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 1); do ./seq 20 20 1e-8 sol_20.txt; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.03 sec.
+    Max Memory :                                 1 MB
+    Average Memory :                             1.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   1 sec.
+    Turnaround time :                            77 sec.
+
+The output (if any) follows:
+
+SEQ M=20 N=20 iters=66 time=0.0008 diff=9.471e-09
+
+
+PS:
+
+Read file <results/seqsol_20.err> for stderr output of this job.
+

@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630498: <mpi_1_80x80> in cluster <MSUCluster> Done
+
+Job <mpi_1_80x80> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:13:06 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:13:06 2026
+Terminated at Fri Nov 27 00:13:09 2026
+Results reported at Fri Nov 27 00:13:09 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J mpi_1_80x80
+#BSUB -q normal
+#BSUB -n 1
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/mpi_1_80x80.out
+#BSUB -e results/mpi_1_80x80.err
+#BSUB -R "span[ptile=1]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 3); do mpiexec ./mpi 80 80 1e-8; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.28 sec.
+    Max Memory :                                 7 MB
+    Average Memory :                             5.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   2 sec.
+    Turnaround time :                            165 sec.
+
+The output (if any) follows:
+
+MPI procs=1 (1x1) M=80 N=80 iters=256 time=0.0361 diff=9.975e-09
+MPI procs=1 (1x1) M=80 N=80 iters=256 time=0.0362 diff=9.975e-09
+MPI procs=1 (1x1) M=80 N=80 iters=256 time=0.0361 diff=9.975e-09
+
+
+PS:
+
+Read file <results/mpi_1_80x80.err> for stderr output of this job.
+

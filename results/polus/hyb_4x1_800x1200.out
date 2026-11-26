@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630515: <hyb_4x1_800x1200> in cluster <MSUCluster> Done
+
+Job <hyb_4x1_800x1200> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:25 2026
+Job was executed on host(s) <4*polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:21:15 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:21:15 2026
+Terminated at Fri Nov 27 00:22:04 2026
+Results reported at Fri Nov 27 00:22:04 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J hyb_4x1_800x1200
+#BSUB -q normal
+#BSUB -n 4
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/hyb_4x1_800x1200.out
+#BSUB -e results/hyb_4x1_800x1200.err
+#BSUB -R "span[ptile=4]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 3); do mpiexec ./hybrid 800 1200 1e-8; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   190.93 sec.
+    Max Memory :                                 288 MB
+    Average Memory :                             256.11 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                21
+    Run time :                                   50 sec.
+    Turnaround time :                            699 sec.
+
+The output (if any) follows:
+
+MPI procs=4 (2x2) threads=1 M=800 N=1200 iters=2892 time=15.7446 diff=9.966e-09
+MPI procs=4 (2x2) threads=1 M=800 N=1200 iters=2892 time=15.7391 diff=9.966e-09
+MPI procs=4 (2x2) threads=1 M=800 N=1200 iters=2892 time=15.7743 diff=9.966e-09
+
+
+PS:
+
+Read file <results/hyb_4x1_800x1200.err> for stderr output of this job.
+

@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630497: <omp_32_800x1200> in cluster <MSUCluster> Done
+
+Job <omp_32_800x1200> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:18:06 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:18:06 2026
+Terminated at Fri Nov 27 00:18:40 2026
+Results reported at Fri Nov 27 00:18:40 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J omp_32_800x1200
+#BSUB -q normal
+#BSUB -n 1
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/omp_32_800x1200.out
+#BSUB -e results/omp_32_800x1200.err
+#BSUB -R "span[ptile=1]"
+#BSUB -R "affinity[core(20)]"
+export OMP_NUM_THREADS=32
+for r in $(seq 3); do ./omp 800 1200 1e-8; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1019.84 sec.
+    Max Memory :                                 66 MB
+    Average Memory :                             56.71 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   34 sec.
+    Turnaround time :                            496 sec.
+
+The output (if any) follows:
+
+OMP threads=32 M=800 N=1200 iters=2892 time=10.9016 diff=9.966e-09
+OMP threads=32 M=800 N=1200 iters=2892 time=10.9721 diff=9.966e-09
+OMP threads=32 M=800 N=1200 iters=2892 time=11.1104 diff=9.966e-09
+
+
+PS:
+
+Read file <results/omp_32_800x1200.err> for stderr output of this job.
+

@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630506: <mpi_8_800x1200> in cluster <MSUCluster> Done
+
+Job <mpi_8_800x1200> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <8*polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:20:06 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:20:06 2026
+Terminated at Fri Nov 27 00:20:35 2026
+Results reported at Fri Nov 27 00:20:35 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J mpi_8_800x1200
+#BSUB -q normal
+#BSUB -n 8
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/mpi_8_800x1200.out
+#BSUB -e results/mpi_8_800x1200.err
+#BSUB -R "span[ptile=8]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 3); do mpiexec ./mpi 800 1200 1e-8; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   218.44 sec.
+    Max Memory :                                 497 MB
+    Average Memory :                             414.33 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              12
+    Max Threads :                                33
+    Run time :                                   30 sec.
+    Turnaround time :                            611 sec.
+
+The output (if any) follows:
+
+MPI procs=8 (2x4) M=800 N=1200 iters=2892 time=8.9440 diff=9.966e-09
+MPI procs=8 (2x4) M=800 N=1200 iters=2892 time=8.9731 diff=9.966e-09
+MPI procs=8 (2x4) M=800 N=1200 iters=2892 time=8.9630 diff=9.966e-09
+
+
+PS:
+
+Read file <results/mpi_8_800x1200.err> for stderr output of this job.
+

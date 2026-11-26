@@ -1,0 +1,53 @@
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630486: <seqsol_800x1200> in cluster <MSUCluster> Done
+
+Job <seqsol_800x1200> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:11:43 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:11:43 2026
+Terminated at Fri Nov 27 00:13:05 2026
+Results reported at Fri Nov 27 00:13:05 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J seqsol_800x1200
+#BSUB -q normal
+#BSUB -n 1
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/seqsol_800x1200.out
+#BSUB -e results/seqsol_800x1200.err
+#BSUB -R "span[ptile=1]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 1); do ./seq 800 1200 1e-8 sol_800x1200.txt; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   80.22 sec.
+    Max Memory :                                 64 MB
+    Average Memory :                             59.50 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   81 sec.
+    Turnaround time :                            161 sec.
+
+The output (if any) follows:
+
+SEQ M=800 N=1200 iters=2892 time=78.3711 diff=9.966e-09
+
+
+PS:
+
+Read file <results/seqsol_800x1200.err> for stderr output of this job.
+

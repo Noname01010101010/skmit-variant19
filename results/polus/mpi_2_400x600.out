@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1630501: <mpi_2_400x600> in cluster <MSUCluster> Done
+
+Job <mpi_2_400x600> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:10:24 2026
+Job was executed on host(s) <2*polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <normal>, as user <edu-cmc-skmodel26-608-02> in cluster <MSUCluster> at Fri Nov 27 00:19:22 2026
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02> was used as the home directory.
+</home_edu/edu-cmc-skmodel26-608/edu-cmc-skmodel26-608-02/variant19> was used as the working directory.
+Started at Fri Nov 27 00:19:22 2026
+Terminated at Fri Nov 27 00:19:38 2026
+Results reported at Fri Nov 27 00:19:38 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J mpi_2_400x600
+#BSUB -q normal
+#BSUB -n 2
+#BSUB -x
+#BSUB -W 00:15
+#BSUB -o results/mpi_2_400x600.out
+#BSUB -e results/mpi_2_400x600.err
+#BSUB -R "span[ptile=2]"
+#BSUB -R "affinity[core(1)]"
+export OMP_NUM_THREADS=1
+for r in $(seq 3); do mpiexec ./mpi 400 600 1e-8; done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   29.26 sec.
+    Max Memory :                                 138 MB
+    Average Memory :                             109.80 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                15
+    Run time :                                   16 sec.
+    Turnaround time :                            554 sec.
+
+The output (if any) follows:
+
+MPI procs=2 (1x2) M=400 N=600 iters=1499 time=4.6024 diff=9.945e-09
+MPI procs=2 (1x2) M=400 N=600 iters=1499 time=4.6061 diff=9.945e-09
+MPI procs=2 (1x2) M=400 N=600 iters=1499 time=4.6028 diff=9.945e-09
+
+
+PS:
+
+Read file <results/mpi_2_400x600.err> for stderr output of this job.
+
