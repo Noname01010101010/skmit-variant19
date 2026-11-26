@@ -1,0 +1,20 @@
+# бинарники
+/seq
+/omp
+/mpi
+/hybrid
+build/
+tests/build/
+# файлы на Polus и большие решения
+jobs/
+results/polus_*/
+*.err
+sol_*.txt
+*.tmp
+# LaTeX
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.xdv
+.DS_Store
