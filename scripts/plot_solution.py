@@ -1,4 +1,4 @@
-# Рисунок приближенного решения. Запуск из корня репозитория: python3 scripts/plot_solution.py sol.txt
+# Рисунок приближенного решения.
 import sys, numpy as np, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 fn = sys.argv[1] if len(sys.argv) > 1 else 'sol_800x1200.txt'
