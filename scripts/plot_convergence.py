@@ -1,8 +1,4 @@
-# Графики сходимости и ошибки (раздел отчета "Сходимость и погрешность").
-# Запуск из корня репозитория:  python3 scripts/plot_convergence.py
-# Собирает seq (обычный и с -DTEST_EXACT) в build/, считает решения и строит
-# report/fig/{conv_cg,conv_iter_err,conv_grid,error_map,exact_grid}.png.
-# Эталон 1280x1280 считается около минуты.
+
 import os, subprocess, numpy as np, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 
